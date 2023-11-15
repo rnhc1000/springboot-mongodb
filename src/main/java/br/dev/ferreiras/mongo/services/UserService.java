@@ -40,6 +40,20 @@ public class UserService {
 
 	}
 
+	public User update(User user) {
+
+		Optional<User> newUser = userRepository.findById(user.getId());
+
+		updateData(newUser, user);
+		return userRepository.save(newUser);
+
+	}
+
+	private void updateData(Optional<User> newUser, User user) {
+		newUser.setName(user.getName());
+		newUser.setEmail(user.getEmail());
+	}
+
 	public void delete(String id) {
 
 		findById(id);
