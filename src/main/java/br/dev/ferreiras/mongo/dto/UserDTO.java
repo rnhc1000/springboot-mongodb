@@ -1,6 +1,7 @@
 package br.dev.ferreiras.mongo.dto;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 import br.dev.ferreiras.mongo.domain.User;
 
@@ -21,6 +22,10 @@ public class UserDTO implements Serializable {
 		name = obj.getName();
 		email = obj.getEmail();
 
+	}
+
+	public UserDTO(Optional<User> obj) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getId() {
